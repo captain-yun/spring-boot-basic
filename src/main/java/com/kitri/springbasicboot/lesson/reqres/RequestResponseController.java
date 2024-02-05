@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
-@Controller
+//@Controller
 //@RequestMapping("/countries")
 public class RequestResponseController {
     static HashMap<String, String> countries = new HashMap<>();

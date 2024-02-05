@@ -8,7 +8,6 @@ async function list() {
     todos.innerHTML = "";
     let res = await fetch("/api/todos");
     let todos_ = await res.json();
-    console.log(todos_)
     todos_.forEach((todo) => {
         addTodoIntoHtml(todo);
     })
@@ -53,6 +52,7 @@ function updateToServer() {
 }
 
 async function postTodo() {
+    console.log("나는 먼저 간다1");
     let res = await fetch("/api/todos", {
         method : "POST",
         headers: {
@@ -63,11 +63,14 @@ async function postTodo() {
             done : "false",
         })
     });
+    console.log(res);
+    console.log("나는 먼저 간다2");
     let todo = await res.json();
     // addTodoIntoHtml(todo);
     if (todo != null) {
         list();
     }
+    console.log("나는 먼저 간다3");
 }
 
 async function toggleCompleted(id) {
