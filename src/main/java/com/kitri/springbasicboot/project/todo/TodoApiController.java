@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-@RestController
-@RequestMapping("/api/todos")
+//@RestController
+//@RequestMapping("/api/todos")
 public class TodoApiController {
     static HashMap<Integer, Todo> todos = new HashMap<>() ;
     static int id = 10;

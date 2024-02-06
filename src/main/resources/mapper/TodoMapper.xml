@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kitri.springbasicboot.lesson.mybatis.mappers.TodoMapper">
+
+    <sql id="responseColumns">
+        id, content, done, created_date, modified_date
+    </sql>
+    <sql id="requestColumns">
+        content, done
+    </sql>
+
+    <insert id="save" parameterType="com.kitri.springbasicboot.lesson.mybatis.todo.domain.TodoRequest">
+        INSERT INTO todo (
+        <include refid="requestColumns" />
+        ) VALUES (
+          #{content}
+        , #{done}
+        )
+    </insert>
+
+    <select id="findById" parameterType="Long" resultType="com.kitri.springbasicboot.lesson.mybatis.todo.domain.TodoResponse">
+        SELECT
+        <include refid="responseColumns" />
+        FROM
+        todo
+        WHERE
+        id = #{value}
+    </select>
+
+    <update id="update" parameterType="com.kitri.springbasicboot.lesson.mybatis.todo.domain.TodoRequest">
+        UPDATE todo
+        SET
+            content = #{content}
+          , done = #{done}
+        WHERE
+            id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="Long">
+        DELETE
+        FROM
+            todo
+        WHERE
+            id = #{id}
+    </delete>
+
+    <select id="findAll" resultType="com.kitri.springbasicboot.lesson.mybatis.todo.domain.TodoResponse">
+        SELECT * FROM todo
+    </select>
+
+</mapper>
