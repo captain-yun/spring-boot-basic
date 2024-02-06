@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation in HTML | CodingNepal</title>
+    <link rel="stylesheet" href="form.css">
+    <!-- Fontawesome CDN Link For Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+<form action="/valid" method="post">
+    <h2>Form Validation</h2>
+    <div class="form-group">
+        <label for="name">이름</label>
+        <input name="name" type="text" id="name" placeholder="이름을 입력하세요">
+    </div>
+    <div class="form-group email">
+        <label for="email">Email</label>
+        <input name="email" type="text" id="email" placeholder="이메일 주소를 입력하세요">
+    </div>
+    <div class="form-group password">
+        <label for="password">Password</label>
+        <input name="password" type="password" id="password" placeholder="비밀번호를 입력하세요">
+        <i id="pass-toggle-btn" class="fa-solid fa-eye"></i>
+    </div>
+    <div class="form-group date">
+        <label for="date">생년월일</label>
+        <input name="date" type="date" id="date" placeholder="날짜를 입력하세요">
+    </div>
+    <div class="form-group gender">
+        <label for="gender">성별</label>
+        <select name="gender" id="gender">
+            <option value="" selected disabled>성별을 선택하세요</option>
+            <option value="Male">남성</option>
+            <option value="Female">여성</option>
+        </select>
+    </div>
+    <div class="form-group submit-btn">
+        <input type="submit" value="제출하기">
+    </div>
+</form>
+
+<!-- <script src="script.js"></script> -->
+</body>
+</html>
